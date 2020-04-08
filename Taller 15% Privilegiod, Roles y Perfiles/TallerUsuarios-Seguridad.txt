@@ -26,14 +26,14 @@ Sneyder Rojas Giraldo
 La base de datos tiene dos tipos de privilegios:
 
 
-De sistema: estos privilegios le permiten al usuario realizar acciones específicas sobre la base de datos como:
+De sistema: estos privilegios le permiten al usuario realizar acciones específicas sobre la base de datos tales como:
 
 CREATE SESSION-----------------------------Permite al usuario conectar con la base de datos
 RESTRICTED SESSION-------------------------Permite al usuario establecer sesión con la base de datos en caso de que la base de datos esté en modo restringido mediante la instrucción:	ALTER SYSTEM ENABLE RESTRICTED SESSION Sólo los usuarios con este privilegio puede conectar con la base de datos si ésta se encuentra en este modo.
 ALTER DATABASE-----------------------------Permite modificar la estructura de la base de datos
 ALTER SYSTEM-------------------------------Permite modificar los parámetros y variables del sistema
 CREATE TABLE-------------------------------Permite crear tablas. Incluye la posibilidad de borrarlas.
-GRANT ANY OBJECT PRIVILEGE-----------------Permite conceder privilegios sobre objetos que no son del usuario (pertenecen a otros usuarios) a terceros usuarios.De objetos: estos privilegios le permiten al usuario acceder y manipular objetos específicos.
+GRANT ANY OBJECT PRIVILEGE-----------------Permite conceder privilegios sobre objetos que no son del usuario (pertenecen a otros usuarios) a terceros usuarios.
 CREATE ANY TABLE---------------------------Permite crear tablas en otros esquemas de usuario
 DROP ANY TABLE-----------------------------Permite borrar tablas de otros usuarios
 SELECT ANY TABLE---------------------------Permite seleccionar datos en tablas de otros usuarios
@@ -41,6 +41,17 @@ INSERT ANY TABLE---------------------------Permite añadir datos en tablas de otr
 UPDATE ANY TABLE---------------------------Permite eliminar datos en tablas de otros usuarios
 DELETE ANY TABLE---------------------------Permite eliminar datos en tablas de otros usuarios
 
+
+De objetos: estos privilegios le permiten al usuario acceder y manipular objetos específicos tales como.
+
+
+SELECT-------------------------------------Tablas, vistas, instantáneas, secuencias.
+INSERT-------------------------------------Tablas, vistas.
+UPDATE-------------------------------------Tablas, vistas.
+DELETE-------------------------------------Tablas, vistas.
+ALTER--------------------------------------Tablas, secuencias.
+EXECUTE------------------------------------Procedimientos, funciones, paquetes, sinónimos, programas en directorios
+INDEX--------------------------------------Tablas (para crear índices en la misma)
 
 
 
