@@ -57,9 +57,11 @@ INDEX--------------------------------------Tablas (para crear índices en la mism
 
 2.Indicar con sus palabras, que son los roles, para que sirven, que son los profiles y para que sirven?
 
+los roles en base de datos son un conjunto de privilegios, estos privilegios son agrupados por uno o varios roles, los cuales le permiten tener una mejor manipulacion de los privilegios al adminitrador de la base datos, y ser mas eficientes a la hora de otogar o quitar permisos en la base de datos. 
 
 
-
+Los perfiles siven para controlar y limitar el uso de recursos del sistema en las bases de datos, esto lo requieren las compañias para limitar a los usuarios que consultan informacion; permitiendo al DBA tener control de la BD y de los usuario que consumen la informacion.
+	
 
 
 
