@@ -67,11 +67,17 @@ Los perfiles siven para controlar y limitar el uso de recursos del sistema en la
 
 
 3.Escribir los comandos para crear el profile "PERFIL_CONSULTA", este profile debe quedar configurado con :
--3 sesiones por usuario
+-3 sesiones por usuario OK
 -Password no debe expirar
 -Tiempo de Inactividad 30 minutos
 -Tiempo de conexion 60 minutos
 
+
+Create profile PERFIL_CONSULTA limit
+Sessions_per_user     3-----------------------------Sesiones Por Usuario 3
+Connect_time          60----------------------------tiempo de conexión: 60
+Idle_time             30----------------------------tiempo de inactividad: 30
+Password_life_time    unlimited---------------------------tiempo de vida de la contraseña: Ilimitada * /
 
 
 
