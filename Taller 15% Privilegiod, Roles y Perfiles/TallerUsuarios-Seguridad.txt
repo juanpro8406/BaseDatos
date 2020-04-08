@@ -1,0 +1,119 @@
+
+Correo
+
+Buenas tardes,
+
+Anexo taller de usuarios a desarrollar y presentacion sobre la sesion.
+Fecha limite de entrega 6am del Jueves 16 de Abril(ojala mucho antes),  ya que durante la clase será revisado en conjunto.
+
+Link de referencia:
+https://docs.oracle.com/cd/B19306_01/network.102/b14266/admusers.htm#i1009117
+
+
+Integrantes:
+
+Juan Pablo Restrepo Osorno
+Edgar Rafael Salome Benitez
+Sneyder Rojas Giraldo
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+1.Indicar claramente la diferencia entre privilegios de objeto y privilegios de sistema.
+
+
+
+La base de datos tiene dos tipos de privilegios:
+
+
+De sistema: estos privilegios le permiten al usuario realizar acciones específicas sobre la base de datos como:
+
+CREATE SESSION-----------------------------Permite al usuario conectar con la base de datos
+RESTRICTED SESSION-------------------------Permite al usuario establecer sesión con la base de datos en caso de que la base de datos esté en modo restringido mediante la instrucción:	ALTER SYSTEM ENABLE RESTRICTED SESSION Sólo los usuarios con este privilegio puede conectar con la base de datos si ésta se encuentra en este modo.
+ALTER DATABASE-----------------------------Permite modificar la estructura de la base de datos
+ALTER SYSTEM-------------------------------Permite modificar los parámetros y variables del sistema
+CREATE TABLE-------------------------------Permite crear tablas. Incluye la posibilidad de borrarlas.
+GRANT ANY OBJECT PRIVILEGE-----------------Permite conceder privilegios sobre objetos que no son del usuario (pertenecen a otros usuarios) a terceros usuarios.De objetos: estos privilegios le permiten al usuario acceder y manipular objetos específicos.
+CREATE ANY TABLE---------------------------Permite crear tablas en otros esquemas de usuario
+DROP ANY TABLE-----------------------------Permite borrar tablas de otros usuarios
+SELECT ANY TABLE---------------------------Permite seleccionar datos en tablas de otros usuarios
+INSERT ANY TABLE---------------------------Permite añadir datos en tablas de otros usuarios
+UPDATE ANY TABLE---------------------------Permite eliminar datos en tablas de otros usuarios
+DELETE ANY TABLE---------------------------Permite eliminar datos en tablas de otros usuarios
+
+
+
+
+2.Indicar con sus palabras, que son los roles, para que sirven, que son los profiles y para que sirven?
+
+
+
+
+
+
+
+
+3.Escribir los comandos para crear el profile "PERFIL_CONSULTA", este profile debe quedar configurado con :
+-3 sesiones por usuario
+-Password no debe expirar
+-Tiempo de Inactividad 30 minutos
+-Tiempo de conexion 60 minutos
+
+
+
+
+
+
+
+4.Escribir los comandos para crear el ROL "APP_ROLE" este ROL debe quedar configurado con los privilegios y/o roles:
+-RESOURCE
+-CREATE TABLE
+-ALTER TABLE
+-SELECT_CATALOG_ROLE
+
+
+
+
+
+
+
+
+5.Escribir los comandos para crear los usuarios PRUEBA1 y PRUEBA2 y asignar a ambos el profile "PERFIL_CONSULTA" y el ROL "APP_ROLE"
+
+
+
+
+
+6.Escribir los comandos para consultar que privilegios a nivel de sistema tienen asignados los usuarios PRUEBA1,PRUEBA2 y el rol "APP_ROLE"
+
+
+
+
+
+
+
+7.Escribir el/los comandos para crear el ROL "ADMINISTRADORES" este ROL debe quedar configurado con los privilegios y/o roles:
+-DBA
+
+
+
+
+
+
+8.Escribir el/los comandos para alterar el usuario PRUEBA1, removiendo sus roles existentes, y dejando este usuario, unicamente con el ROL "ADMINISTRADORES"
+
+
+
+
+
+
+9.Eliminar el profile "PERFIL_CONSULTA", el comando no debe presentar errores, recordar que en este punto, los usuarios PRUEBA1 y PRUEBA2 tienen asignado este perfil.
+
+
+
+
+
+10.En que profile quedan asociados los usuarios PRUEBA1 y PRUEBA2 al eliminar el profile "PERFIL_CONSULTA"? Explique claramente
+
+
+
