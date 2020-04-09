@@ -90,23 +90,50 @@ Password_life_time    unlimited---------------------------tiempo de vida de la c
 -ALTER TABLE
 -SELECT_CATALOG_ROLE
 
+CREATE ROLE APP_ROLE;
+GRANT RESOURCE TO APP_ROLE;
+GRANT SELECT_CATALOG_ROLE TO APP_ROLE;
+GRANT CREATE TABLE TO APP_ROLE;
+GRANT ALTER ANY TABLE TO APP_ROLE;
 
-
-
-
-
+select * from dba_sys_privs where grantee = 'APP_ROLE';
+select * from DBA_ROLE_PRIVS WHERE GRANTEE = 'APP_ROLE' order by GRANTEE;
 
 
 5.Escribir los comandos para crear los usuarios PRUEBA1 y PRUEBA2 y asignar a ambos el profile "PERFIL_CONSULTA" y el ROL "APP_ROLE"
 
+alter session set "_ORACLE_SCRIPT"=TRUE;
 
+create user PRUEBA1
+identified by "PR123"
+default tablespace TallerPRPU
+quota unlimited on TallerPRPU
+grant create session to PRUEBA1;
+
+create user PRUEBA2
+identified by "PR123"
+default tablespace TallerPRPU
+quota unlimited on TallerPRPU
+grant create session to PRUEBA2;
+
+
+alter user PRUEBA1 profile PERFIL_CONSULTA;
+
+alter user PRUEBA2 profile PERFIL_CONSULTA;
+
+
+GRANT APP_ROLE TO PRUEBA1;
+
+GRANT APP_ROLE TO PRUEBA2;
 
 
 
 6.Escribir los comandos para consultar que privilegios a nivel de sistema tienen asignados los usuarios PRUEBA1,PRUEBA2 y el rol "APP_ROLE"
 
+SELECT * FROM dba_sys_privs WHERE GRANTEE ='PRUEBA1';
+SELECT * FROM dba_sys_privs WHERE GRANTEE ='PRUEBA2';
 
-
+select * from dba_sys_privs where grantee = 'APP_ROLE'
 
 
 
