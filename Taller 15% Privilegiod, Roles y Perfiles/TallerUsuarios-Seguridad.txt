@@ -142,13 +142,26 @@ select * from dba_sys_privs where grantee = 'APP_ROLE'
 -DBA
 
 
+CREATE ROLE ADMINISTRADORES;
+GRANT DBA TO ADMINISTRADORES;
+select * from DBA_ROLE_PRIVS WHERE GRANTEE = 'ADMINISTRADORES' order by GRANTEE;
 
 
 
 
 8.Escribir el/los comandos para alterar el usuario PRUEBA1, removiendo sus roles existentes, y dejando este usuario, unicamente con el ROL "ADMINISTRADORES"
 
+select username, granted_role
+   from user_role_privs
 
+   select role, granted_role
+ from role_role_privs where role='APP_ROLE';
+
+select * from dba_sys_privs where grantee = 'APP_ROLE'
+
+ REVOKE "APP_ROLE" FROM "PRUEBA1";
+ 
+ GRANT ADMINISTRADORES TO PRUEBA1;
 
 
 
@@ -156,10 +169,17 @@ select * from dba_sys_privs where grantee = 'APP_ROLE'
 9.Eliminar el profile "PERFIL_CONSULTA", el comando no debe presentar errores, recordar que en este punto, los usuarios PRUEBA1 y PRUEBA2 tienen asignado este perfil.
 
 
+select username, profile from dba_users WHERE USERNAME ='PRUEBA1';
+
+select username, profile from dba_users WHERE USERNAME ='PRUEBA2';  
+
+DROP PROFILE PERFIL_CONSULTA CASCADE; 
 
 
 
 10.En que profile quedan asociados los usuarios PRUEBA1 y PRUEBA2 al eliminar el profile "PERFIL_CONSULTA"? Explique claramente
+
+Quedan asignado en profile por default, se asigna el profile DEFAULT a los usuarios que tenian asignado el profile "PERFIL_CONSULTA".
 
 
 
